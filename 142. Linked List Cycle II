@@ -1,0 +1,27 @@
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+  ListNode*slow=head;
+  ListNode*fast=head;
+  ListNode*a=NULL;
+        int b=0;
+  while(fast!=NULL && fast-> next!=NULL) {
+      slow=slow->next;
+      fast=fast->next->next;
+      if(fast==slow) {
+          b=1;
+          break;
+          }
+      }
+        
+      if(b==1) {
+      ListNode*temp=head;
+        while (temp!=slow){
+            temp=temp->next;
+            slow=slow->next;
+            }
+        a=slow;
+        }
+        return a;
+    }
+};
