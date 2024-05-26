@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<int> occurrencesOfElement(vector<int>& nums, vector<int>& queries, int x) {
+     vector<int>answer(queries.size(),-1);
+        vector<int>occ;
+        
+        for(int i=0;i<nums.size();i++){
+            if(x==nums[i]) occ.push_back(i);
+        }
+       
+        for(int i=0;i<queries.size();i++){
+            int occ_idx=queries[i]-1;
+              if(occ_idx<occ.size()){
+                 answer[i]=occ[occ_idx];
+                
+              }  
+            
+        }
+      return answer;  
+    }  
+};
