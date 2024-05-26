@@ -1,4 +1,6 @@
 
+   class Solution {
+public:
     int duplicateNumbersXOR(vector<int>& nums) {
      vector<int>x;
     sort(nums.begin(), nums.end());
@@ -11,3 +13,4 @@
         }
         return r;
     }
+};
