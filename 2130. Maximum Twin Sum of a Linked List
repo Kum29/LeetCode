@@ -1,0 +1,35 @@
+class Solution {
+public:
+    ListNode *reverse(ListNode *head){
+       ListNode *prev=NULL;
+       ListNode *after=NULL;
+       ListNode *cur=head;
+        while(cur!=NULL){
+          after=cur->next;
+          cur->next=prev;
+          prev=cur;
+          cur=after;
+        }    
+        return prev;
+        }
+    int pairSum(ListNode* head) {
+       ListNode *fast=head;
+       ListNode *slow=head;
+    //   if(head==NULL && head!= 
+      while(fast->next->next!=NULL){
+        slow=slow->next;  
+        fast=fast->next->next;
+        }    
+        ListNode *a=reverse(slow->next);    
+        ListNode *temp=head;
+        int max=0;
+        while(a!=NULL){
+           int s=((a->val)+(temp->val));
+            if(max< s)
+                max=s;
+            a=a->next;
+            temp=temp->next;
+            }
+        return max;
+    }
+};
