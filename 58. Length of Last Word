@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+         int x;
+    for(int i=s.size()-1;i>=0;i--){
+        int ascii=(int)s[i];
+if((ascii>96 && ascii<123)||(ascii>64 && ascii<91)){
+              x=i;
+            break;
+      }
+   }
+
+ int c=0;
+    for(int i=x;i>=0;i--){
+        if(s[i]==' ') break;
+        c++;
+    }
+     return c;   
+}
+};
