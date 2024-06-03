@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int minimumChairs(string s) {
+        stack<char>st;
+        int c=0,m=0;
+        for(int i=0;i<s.size();i++){
+      if(s[i]=='E'){
+          st.push(s[i]);
+          c=st.size();
+          m=max(c,m);
+      }
+            else st.pop();
+        }
+        return m;
+    }
+};
